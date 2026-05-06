@@ -1,3 +1,2 @@
 #!/bin/bash
-
-echo "ameen mamu"
+echo "hello world"
