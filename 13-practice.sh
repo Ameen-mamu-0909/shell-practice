@@ -1,10 +1,11 @@
 #!/bin/bash
+
 R="\e[31m"
 G="\e[32m"
 USERID=&(id -u)
 LOGS_FILE="/tmp/installation.log"
 
-yum remove mysql -y
+yum remove mysql-server -y
 yum install mysql -y &&>> $LOGS_FILE
 
 if [ $? -ne 0 ]; then
