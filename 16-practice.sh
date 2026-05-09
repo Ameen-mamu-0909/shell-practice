@@ -3,13 +3,14 @@
 USERID=$(id -u)
 mkdir ameen
 
-LOG_FILE="ameen/script.log"
+LOG_FILE="/tmp/script.log"
 
 if [ $USERID -ne 0 ]
 then
     echo "Please run with root access"
     exit 1
 fi
+  mkdir -p ameen
 
 dnf install httpd -y &&>> $LOG_FILE
 
