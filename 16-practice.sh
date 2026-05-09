@@ -1,7 +1,6 @@
 #!/bin/bash
 
 USERID=$(id -u)
-mkdir ameen
 
 LOG_FILE="/tmp/script.log"
 
