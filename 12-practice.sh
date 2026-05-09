@@ -5,7 +5,7 @@ LOG_FILE="logs.txt"
 
 touch $FILE
 
-if [ $? -eq 0 ]; then
+if [ $? -ne 0 ]; then
     echo "$FILE created successfully" | tee -a $LOG_FILE
 else
     echo "Failed to create $FILE" | tee -a $LOG_FILE
