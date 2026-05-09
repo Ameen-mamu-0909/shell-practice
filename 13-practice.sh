@@ -1,13 +1,14 @@
 #!/bin/bash
 R="\e[31m"
 G="\e[32m"
-LOGS_FILE="logs.txt"
-USERID=$(id -u)
+USERID=&(id -u)
+LOGS_FILE="/tmp/installation.log"
 
-yum install mysql -y
+yum remove mysql -y
+yum install mysql -y &&>> $LOGS_FILE
 
 if [ $? -ne 0 ]; then
- echo "mysql installation successfully....&G" | tee -a logs.txt
+ echo "mysql installation successfully....&G" | tee -a $LOGS_FILE
 else
- echo "mysql installation failure...&R" | tee -a logs.txt
+ echo "mysql installation failure...&R" | tee -a $LOGS_FILE
 fi 
