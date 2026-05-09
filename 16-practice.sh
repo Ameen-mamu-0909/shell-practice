@@ -1,6 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
+mkdir ameen
+
+LOG_FILE="ameen/script.log"
 
 if [ $USERID -ne 0 ]
 then
@@ -8,7 +11,7 @@ then
     exit 1
 fi
 
-dnf install httpd -y
+dnf install httpd -y &&>> $LOG_FILE
 
 if [ $? -eq 0 ]
 then
@@ -18,7 +21,7 @@ else
     exit 1
 fi
 
-systemctl enable httpd
-systemctl start httpd
-
-systemctl status httpd
+systemctl enable httpd &&>> $LOG_FILE
+systemctl start httpd &&>> $LOG_FILE
+systemctl update httpd &&>> $LOG_FILE
+systemctl status httpd &&>> $LOG_FILE
