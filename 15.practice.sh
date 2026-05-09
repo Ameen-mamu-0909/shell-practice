@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOGFILE="/mamu/script.log"
+LOGFILE="/tmp/script.log"
 
 echo "script started at: $(date)" >> $LOGFILE
 
