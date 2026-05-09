@@ -4,7 +4,7 @@ G="\e[31m"
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]; then
-   echo "your are root user....$G"
+   echo "your are root user...."
 else 
-   echo "your are normal user.....$R"
+   echo "your are normal user...."
 fi   
