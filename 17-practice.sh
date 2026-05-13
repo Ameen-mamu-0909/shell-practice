@@ -8,4 +8,3 @@ else
   echo "port 80 is not active"
 fi  
 
-yum install giy -y
